@@ -26,5 +26,8 @@ Please contact us to get more info about development environment provided to thi
 To run tests inside the Vagrant box:
 * Step inside the Vagrant box, eg `vagrant ssh`
 * Go to the plugin folder, eg `cd code/web/app/plugins/wp-story-engine`
-* Install the test setup `bin/install-wp-tests.sh wordpress_test homestead 'secret' localhost latest`
 * Run `phpunit`
+
+### Code Style
+PSR is used, validate style with:
+`phpcs --ignore=*/vendor/* .`
