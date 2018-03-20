@@ -21,3 +21,10 @@ Releases of this plugin is version controlled via Git Flow with develop and mast
 
 ### Development environment
 Please contact us to get more info about development environment provided to this plugin.
+
+### Tests locally with phpunit
+To run tests inside the Vagrant box:
+* Step inside the Vagrant box, eg `vagrant ssh`
+* Go to the plugin folder, eg `cd code/web/app/plugins/wp-story-engine`
+* Install the test setup `bin/install-wp-tests.sh wordpress_test homestead 'secret' localhost latest`
+* Run `phpunit`

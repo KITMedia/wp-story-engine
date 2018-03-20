@@ -1,0 +1,16 @@
+{
+    "name": "kitmedia/wp-story-engine",
+    "type": "wordpress-plugin",
+    "require-dev": {
+        "phpunit/phpunit": "^6",
+        "10up/wp_mock": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "KITMedia",
+            "email": "info@kit.se"
+        }
+    ],
+    "require": {}
+}
