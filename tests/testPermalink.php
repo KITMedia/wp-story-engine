@@ -11,7 +11,7 @@ namespace Test\StoryEngine\WebHook;
 /**
  * Sample test case.
  */
-class PermalinkTest extends \WP_Mock\Tools\TestCase
+class testPermalink extends \WP_Mock\Tools\TestCase
 {
 
     public function setUp()
