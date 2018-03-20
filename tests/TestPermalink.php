@@ -1,6 +1,6 @@
 <?php
 
-namespace Test\StoryEngine\WebHook;
+namespace StoryEngine\WebHookTest;
 
 /**
  * Class SampleTest
@@ -11,7 +11,7 @@ namespace Test\StoryEngine\WebHook;
 /**
  * Sample test case.
  */
-class testPermalink extends \WP_Mock\Tools\TestCase
+class TestPermalink extends \WP_Mock\Tools\TestCase
 {
 
     public function setUp()

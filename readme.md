@@ -23,11 +23,11 @@ Releases of this plugin is version controlled via Git Flow with develop and mast
 Please contact us to get more info about development environment provided to this plugin.
 
 ### Tests locally with phpunit
-To run tests inside the Vagrant box:
-* Step inside the Vagrant box, eg `vagrant ssh`
-* Go to the plugin folder, eg `cd code/web/app/plugins/wp-story-engine`
-* Run `phpunit`
+Attention! `composer update` before any unit testing!
+In the plugin root folder:
+`vendor/bin/phpunit`
 
-### Code Style
+### Code Style Sniff locally
 PSR is used, validate style with:
-`phpcs --ignore=*/vendor/* .`
+Attention! `composer update` before any style check!
+`vendor/bin/phpcs --ignore=*/vendor/* .`
