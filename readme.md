@@ -31,3 +31,6 @@ In the plugin root folder:
 PSR is used, validate style with:
 Attention! `composer update` before any style check!
 `vendor/bin/phpcs --ignore=*/vendor/* .`
+
+## Data
+Gist example data (incoming json to endpoint): [https://gist.github.com/chredd/05dcdde86a48c8558ba70c5fe95514c5](https://gist.github.com/chredd/05dcdde86a48c8558ba70c5fe95514c5)
