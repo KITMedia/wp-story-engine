@@ -22,10 +22,21 @@ Releases of this plugin is version controlled via Git Flow with develop and mast
 ### Development environment
 Please contact us to get more info about development environment provided to this plugin.
 
-### Tests locally with phpunit
+### PHPUnit
 Attention! `composer update` before any unit testing!
-In the plugin root folder:
-`vendor/bin/phpunit`
+
+We run docker containers to unit tests in real WordPress (no mock).
+[https://github.com/frozzare/docker-wptest](https://github.com/frozzare/docker-wptest)
+[https://github.com/wpup/test-suite](https://github.com/wpup/test-suite)
+Special thanks to Frozzare!
+
+To initialize tests with docker, run: `docker run --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d mysql:latest`
+
+To run tests, in the plugin folder, eg: `docker run -e WP_VERSION=4.9 --rm -v $(pwd):/opt --link mysql frozzare/wptest:5.6 vendor/bin/phpunit`
+
+PHPUnit testing with docker:
+[https://youtu.be/9CEoapNrrSc](Video)
+
 
 ### Code Style Sniff locally
 PSR is used, validate style with:
