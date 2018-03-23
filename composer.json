@@ -13,5 +13,7 @@
             "email": "info@kit.se"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=5.6"
+    }
 }
