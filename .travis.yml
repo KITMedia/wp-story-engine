@@ -8,10 +8,8 @@ php:
 
 env:
   - WP_VERSION=latest WP_MULTISITE=0
-  - WP_VERSION=4.9 WP_MULTISITE=0
-  - WP_VERSION=4.8 WP_MULTISITE=0
-  - WP_VERSION=4.7 WP_MULTISITE=0
-  - WP_VERSION=4.6 WP_MULTISITE=0
+  - WP_VERSION=4.8.3 WP_MULTISITE=0
+  - WP_VERSION=4.7.3 WP_MULTISITE=0
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
