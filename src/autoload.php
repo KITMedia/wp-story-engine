@@ -19,7 +19,7 @@ spl_autoload_register(function ($class) {
     $path = __DIR__;
     $extension = '.php';
 
-    $_class = strtolower(str_replace('StoryEngine\\WebHook', '', $class));
+    $_class = str_replace('StoryEngine\\WebHook', '', $class);
     $_class = str_replace('_', '-', $_class);
     $_class = str_replace('\\', DIRECTORY_SEPARATOR, $_class);
 
