@@ -1,4 +1,9 @@
 # Story Engine WebHook plugin for WordPress
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/KITMedia/wp-story-engine.git)
+[![Build Status](https://travis-ci.org/KITMedia/wp-story-engine.svg?branch=master)](https://travis-ci.org/KITMedia/wp-story-engine)
+[![GitHub release](https://img.shields.io/github/release/KITMedia/wp-story-engine.svg)](https://github.com/KITMedia/wp-story-engine/archive/develop.zip)
+
 This plugin creates an endpoint for Story Engine to publish it's content.
 
 ## Requirements
