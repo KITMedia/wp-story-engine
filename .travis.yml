@@ -8,7 +8,6 @@ php:
 
 env:
   - WP_VERSION=latest WP_MULTISITE=0
-  - WTS_PLUGIN_FILE_NAME='loader.php'
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
