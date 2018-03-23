@@ -65,7 +65,7 @@ class Template
      *
      * @return string
      */
-    protected function renderTemplate( /*$template, $variables*/)
+    protected function renderTemplate()
     {
         ob_start();
         foreach (func_get_args()[1] as $key => $value) {
