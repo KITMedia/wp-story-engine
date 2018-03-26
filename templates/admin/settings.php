@@ -5,4 +5,7 @@
     <p>
         <?=$body?>
     </p>
+    <p>
+        Post Endpoint: <code><?=$apiUrl?></code>
+    </p>
 </div>
