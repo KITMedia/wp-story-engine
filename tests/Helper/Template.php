@@ -9,6 +9,7 @@ class Template extends \WP_UnitTestCase
         $output = \StoryEngine\WebHook\Helper\Template::render('admin/settings', [
             'headline' => 'This is the Headline',
             'body' => 'This is the body',
+            'apiUrl' => '',
         ]);
 
         $valid = strpos($output, 'This is the Headline');
