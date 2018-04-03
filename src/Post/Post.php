@@ -4,12 +4,15 @@ namespace StoryEngine\WebHook\Post;
 
 class Post
 {
-    protected $size;
+    /**
+     * @var int
+     */
+    public $id;
 
-    protected $cheese = false;
-    protected $pepperoni = false;
-    protected $lettuce = false;
-    protected $tomato = false;
+    /**
+     * @var int|\WP_Error
+     */
+    public $error;
 
     /**
      * Post constructor.
@@ -17,10 +20,16 @@ class Post
      */
     public function __construct($postBuilder)
     {
-        $this->size = $postBuilder->size;
-        $this->cheese = $postBuilder->cheese;
-        $this->pepperoni = $postBuilder->pepperoni;
-        $this->lettuce = $postBuilder->lettuce;
-        $this->tomato = $postBuilder->tomato;
+        $postData = [
+            'post_title' => $postBuilder->title,
+            'post_type' => 'post',
+            'post_status' => 'publish',
+        ];
+
+        $this->id = wp_insert_post($postData, true);
+        if (!is_int($this->id)) {
+            $this->error = $this->id;
+            $this->id = 0;
+        }
     }
 }

@@ -4,44 +4,23 @@ namespace StoryEngine\WebHook\Post;
 
 class PostBuilder
 {
-    public $size;
+    public $data;
 
-    public $cheese = false;
-    public $pepperoni = false;
-    public $lettuce = false;
-    public $tomato = false;
+    public $title;
 
-    public function __construct(int $size)
+    public function __construct($jsonData)
     {
-        $this->size = $size;
+        $this->data = $jsonData;
     }
 
-    public function addPepperoni()
+    public function addTitle()
     {
-        $this->pepperoni = true;
+        $this->title = Extract\Title::get($this->data);
         return $this;
     }
 
-    public function addLettuce()
+    public function build()
     {
-        $this->lettuce = true;
-        return $this;
-    }
-
-    public function addCheese()
-    {
-        $this->cheese = true;
-        return $this;
-    }
-
-    public function addTomato()
-    {
-        $this->tomato = true;
-        return $this;
-    }
-
-    public function build(): Burger
-    {
-        return new Burger($this);
+        return new Post($this);
     }
 }
