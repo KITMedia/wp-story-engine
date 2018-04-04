@@ -2,6 +2,8 @@
 
 namespace StoryEngine\WebHook\Post;
 
+use StoryEngine\WebHook\Helper\Log;
+
 class Action
 {
 
@@ -10,18 +12,20 @@ class Action
         $data = json_decode($request->get_body());
 
         if(!Valid::data($data)) {
+            $errorMessage = "Body data not valid. Send json formatted data from Story Engine";
+            Log::Error($errorMessage);
             return [
                 'result' => 'error',
                 'data' => [
                     'id' => 0,
                     'url' => '',
                 ],
-                'error' => 'Body data not valid',
+                'error' => $errorMessage,
             ];
         }
 
         $post = (new PostBuilder($data))
-            ->addTitle()
+            ->addExtractions()
             ->build();
 
         return [

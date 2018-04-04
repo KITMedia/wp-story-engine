@@ -4,18 +4,26 @@ namespace StoryEngine\WebHook\Post;
 
 class PostBuilder
 {
-    public $data;
-
-    public $title;
+    public $inData;
+    public $extractions;
 
     public function __construct($jsonData)
     {
-        $this->data = $jsonData;
+        $this->inData = $jsonData;
+        $this->extractions = new \stdClass();
     }
 
-    public function addTitle()
+    public function addExtractions()
     {
-        $this->title = Extract\Title::get($this->data);
+        foreach (glob(__DIR__ . "/Extract/*.php") as $filename) {
+            $base = __NAMESPACE__ . '\\Extract\\';
+            $filename = pathinfo($filename)['filename'];
+            if (in_array("{$base}ExtractInterface", class_implements("{$base}{$filename}"))) {
+                $callable = "{$base}{$filename}::get";
+                $property = lcfirst($filename);
+                $this->extractions->{$property} = call_user_func($callable, $this->inData);
+            }
+        }
         return $this;
     }
 
