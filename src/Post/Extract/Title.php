@@ -6,6 +6,10 @@ use StoryEngine\WebHook\Helper\Log;
 
 class Title implements ExtractInterface
 {
+    public static function sortOrder() {
+        return 10;
+    }
+
     public static function get($data)
     {
         $result = property_exists($data, 'title') ? $data->title : '';
@@ -21,9 +25,11 @@ class Title implements ExtractInterface
         return $result;
     }
 
-    public static function mount($value) {
+    public static function mount($postData, $value) {
         return [
-            'post_title' => $value,
+            'post' => [
+                'post_title' => $value,
+            ],
         ];
     }
 }

@@ -2,22 +2,22 @@
 
 namespace StoryEngine\WebHook\Post\Extract;
 
-class Excerpt implements ExtractInterface
+class Id implements ExtractInterface
 {
     public static function sortOrder() {
-        return 20;
+        return 10;
     }
 
     public static function get($data)
     {
-        $result = property_exists($data, 'excerpt') ? $data->excerpt : '';
+        $result = property_exists($data, '_id') ? $data->_id : null;
         return $result;
     }
 
     public static function mount($postData, $value) {
         return [
-            'post' => [
-                'post_excerpt' => $value,
+            'meta' => [
+                '_storyengine_id' => $value,
             ],
         ];
     }
