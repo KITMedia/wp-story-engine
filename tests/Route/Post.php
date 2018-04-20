@@ -16,12 +16,12 @@ class Post extends \WP_UnitTestCase
 
     public function testIfTestRouteExists()
     {
-        $request = new \WP_REST_Request('GET', '/storyengine/webhook/v1/posts');
+        $request = new \WP_REST_Request('POST', '/storyengine/webhook/v1/post');
         $response = $this->server->dispatch($request);
         $this->assertEquals(200, $response->get_status());
         $data = $response->get_data();
         $this->assertArrayHasKey('result', $data);
-        $this->assertEquals('success', $data['result']);
+        $this->assertEquals($data['result'], 'error');
     }
 
 }
