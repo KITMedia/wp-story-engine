@@ -2,7 +2,7 @@
 
 namespace StoryEngine\WebHook\Post\Extract;
 
-class Status implements ExtractInterface
+class UpdatedDate implements ExtractInterface
 {
     public static function sortOrder() {
         return 10;
@@ -10,13 +10,16 @@ class Status implements ExtractInterface
 
     public static function get($data)
     {
-        return 'published';
+        return property_exists($data, 'updatedDate') ?
+            date_i18n('Y-m-d H:i:s',strtotime($data->updatedDate)) :
+            null;
     }
 
     public static function mount($postData, $value) {
         return [
             'post' => [
-                'post_status' => $value,
+                'post_modified' => $value,
+                'post_modified_gmt' => $value,
             ],
         ];
     }

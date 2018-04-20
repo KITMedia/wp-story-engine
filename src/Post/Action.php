@@ -11,8 +11,11 @@ class Action
     {
         $data = json_decode($request->get_body());
 
-        if(!Valid::data($data)) {
-            $errorMessage = "Body data not valid. Send json formatted data from Story Engine";
+        $validateData = Valid::data($data);
+
+        if ($validateData !== true) {
+            $errorMessage = "Body data not valid. Send json formatted data from Story Engine. ";
+            $errorMessage .= "System message: {$validateData}";
             Log::Error($errorMessage);
             return [
                 'result' => 'error',
@@ -30,11 +33,10 @@ class Action
 
         return [
             'result' => $post->id ? 'success' : 'error',
-            'data' => [
-                'id' => $post->id,
-                'url' => get_permalink($post->id),
-            ],
+            'id' => $post->id,
+            'url' => get_permalink($post->id),
             'error' => $post->error,
+            'data' => $post->data,
         ];
     }
 }

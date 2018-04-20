@@ -10,7 +10,7 @@ class Id implements ExtractInterface
 
     public static function get($data)
     {
-        $result = property_exists($data, '_id') ? $data->_id : null;
+        $result = property_exists($data, 'id') ? $data->id : null;
         return $result;
     }
 

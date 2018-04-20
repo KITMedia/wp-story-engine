@@ -4,18 +4,30 @@ namespace StoryEngine\WebHook\Post;
 
 class Valid
 {
+    /**
+     * @param $bodyData
+     * @return bool|string
+     */
     public static function data($bodyData)
     {
+        $properties = [
+            "body",
+            "title",
+            "authors",
+            "id",
+            "excerpt",
+            "publishedDate",
+            "updatedDate",
+        ];
+
         if (!$bodyData) {
-            return false;
+            return "Payload body data as json missing";
         }
 
-        if (!property_exists($bodyData, 'title')) {
-            return false;
-        }
-
-        if (!property_exists($bodyData, 'contentBlocks')) {
-            return false;
+        foreach ($properties as $property) {
+            if (!property_exists($bodyData, $property)) {
+                return "{$property} missing";
+            }
         }
 
         return true;

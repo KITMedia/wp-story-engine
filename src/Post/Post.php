@@ -14,22 +14,24 @@ class Post
      */
     public $error;
 
+    public $data;
+
     /**
      * Post constructor.
      * @param PostBuilder $postBuilder
      */
     public function __construct($postBuilder)
     {
-        $postData = [
+        $this->data = [
             'post' => [],
             'meta' => [],
         ];
 
         $actions = $this->fillActions($postBuilder);
         $actions = $this->sortActions($actions);
-        $postData = $this->mountActions($postData, $actions);
+        $this->data = $this->mountActions($this->data, $actions);
 
-        $this->id = wp_insert_post($postData['post'], true);
+        $this->id = wp_insert_post($this->data['post'], true);
 
         if (!is_int($this->id)) {
             $this->error = $this->id;
@@ -37,7 +39,7 @@ class Post
             return;
         }
 
-        $this->updatePostMeta($this->id, $postData['meta']);
+        $this->updatePostMeta($this->id, $this->data['meta']);
     }
 
     private function fillActions($postBuilder)
