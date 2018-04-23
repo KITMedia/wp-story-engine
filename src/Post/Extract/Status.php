@@ -10,7 +10,7 @@ class Status implements ExtractInterface
 
     public static function get($data)
     {
-        return 'published';
+        return 'publish';
     }
 
     public static function mount($postData, $value) {
