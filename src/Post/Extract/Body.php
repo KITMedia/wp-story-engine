@@ -42,7 +42,7 @@ class Body implements ExtractInterface
             }
         }
 
-        return $result;
+        return wpautop($result);
     }
 
     public static function mount($postData, $value)
