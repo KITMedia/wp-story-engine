@@ -23,5 +23,9 @@ spl_autoload_register(function ($class) {
     $_class = str_replace('_', '-', $_class);
     $_class = str_replace('\\', DIRECTORY_SEPARATOR, $_class);
 
+    if (!file_exists($path . $_class . $extension)) {
+        return false;
+    }
+
     return $loaded[$class] = (bool)require $path . $_class . $extension;
 });

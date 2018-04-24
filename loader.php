@@ -8,9 +8,9 @@
 
 defined('ABSPATH') or die('No script kiddies please!');
 
-if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-    require_once __DIR__ . '/vendor/autoload.php';
-}
+//if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+//    require_once __DIR__ . '/vendor/autoload.php';
+//}
 
 if(!class_exists('StoryEngine\WebHook\Setup\Setup')) {
     require_once __DIR__ . '/src/autoload.php';
