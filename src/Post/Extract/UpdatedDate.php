@@ -12,7 +12,7 @@ class UpdatedDate implements ExtractInterface
     public static function get($data)
     {
         return property_exists($data, 'updatedDate') ?
-            date_i18n('Y-m-d H:i:s', strtotime($data->updatedDate)) :
+            date('Y-m-d H:i:s', strtotime($data->updatedDate)) :
             null;
     }
 
@@ -20,7 +20,7 @@ class UpdatedDate implements ExtractInterface
     {
         return [
             'post' => [
-                'post_modified' => $value,
+                //'post_modified' => $value,
                 'post_modified_gmt' => $value,
             ],
         ];

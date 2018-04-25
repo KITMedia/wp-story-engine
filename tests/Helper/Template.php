@@ -10,7 +10,7 @@ class Template extends \WP_UnitTestCase
             'headline' => 'This is the Headline',
             'body' => 'This is the body',
             'apiUrl' => '',
-            'regenerateUrl' => '#',
+            'regenerateTokenUrl' => '?page=wp-story-engine-settings&regenerateToken=true',
         ]);
 
         $valid = strpos($output, 'This is the Headline');

@@ -2,12 +2,15 @@
 
 namespace StoryEngine\Test\WebHook\Post;
 
+use StoryEngine\WebHook\Token\TokenManager;
+
 class Action extends \WP_UnitTestCase
 {
 
     public function testReceiveMigration()
     {
-        $request = new \WP_REST_Request('POST', '/wp-json/storyengine/webhook/v1/post');
+        $token = TokenManager::get();
+        $request = new \WP_REST_Request("POST", "/wp-json/storyengine/webhook/v1/post/{$token}");
 
         $payload = json_encode([
             "body" => "test",
@@ -20,10 +23,12 @@ class Action extends \WP_UnitTestCase
         ]);
 
         $request->set_body($payload);
+        $request->set_param('token', $token);
         $response = \StoryEngine\WebHook\Post\Action::receive($request);
-        $this->assertTrue(isset($response['result']) && $response['result'] == "success");
+        $data = $response->get_data();
+        $this->assertTrue(isset($data['result']) && $data['result'] == "success");
 
-        $postId = (int)$response['id'];
+        $postId = (int)$data['id'];
         $this->assertTrue($postId > 0);
 
         if ($postId) {
@@ -34,7 +39,8 @@ class Action extends \WP_UnitTestCase
 
         $request->set_body('');
         $response = \StoryEngine\WebHook\Post\Action::receive($request);
-        $this->assertTrue(isset($response['result']) && $response['result'] == "error");
+        $data = $response->get_data();
+        $this->assertTrue(isset($data['result']) && $data['result'] == "error");
 
     }
 

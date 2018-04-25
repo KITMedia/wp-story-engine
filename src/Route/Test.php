@@ -9,7 +9,7 @@ class Test implements RouteInterface
         \register_rest_route(RouteHelper::BASE, 'test', [
             'methods' => 'GET',
             'callback' => function () {
-                return ['result' => 'test is ok'];
+                return new \WP_REST_Response(['result' => 'test is ok'], 200);
             },
         ]);
     }

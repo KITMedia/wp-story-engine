@@ -2,6 +2,7 @@
 
 namespace StoryEngine\WebHook\Post\Extract;
 
+use StoryEngine\WebHook\Helper\Debug;
 use StoryEngine\WebHook\Helper\Log;
 
 class Id implements ExtractInterface
@@ -13,7 +14,7 @@ class Id implements ExtractInterface
     public static function get($data)
     {
         if(!is_object($data)) {
-            Log::Error('Data not an object for title extraction');
+            Debug::current()->error('Data not an object for title extraction');
             return '';
         }
 

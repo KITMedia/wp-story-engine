@@ -14,7 +14,7 @@
         Post Endpoint: <code><?php echo $apiUrl; ?></code>
     </p>
     <p>
-        <a href="<?php echo $regenerateUrl; ?>"
+        <a href="<?php echo $regenerateTokenUrl; ?>"
            class="button-primary"
            title="Regenerate Access Token">
             Regenerate Access Token

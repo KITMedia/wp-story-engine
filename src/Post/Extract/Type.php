@@ -2,6 +2,7 @@
 
 namespace StoryEngine\WebHook\Post\Extract;
 
+use StoryEngine\WebHook\Helper\Debug;
 use StoryEngine\WebHook\Helper\Log;
 
 class Type implements ExtractInterface
@@ -17,6 +18,7 @@ class Type implements ExtractInterface
     }
 
     public static function mount($postData, $value) {
+
         return [
             'post' => [
                 'post_type' => $value,

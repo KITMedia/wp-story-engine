@@ -2,6 +2,7 @@
 
 namespace StoryEngine\WebHook\Post\Extract;
 
+use StoryEngine\WebHook\Helper\Debug;
 use StoryEngine\WebHook\Helper\Log;
 
 class Title implements ExtractInterface
@@ -13,18 +14,15 @@ class Title implements ExtractInterface
     public static function get($data)
     {
         if(!is_object($data)) {
-            Log::Error('Data not an object for title extraction');
+            Debug::current()->error('Data not an object for title extraction');
             return '';
         }
 
         $result = property_exists($data, 'title') ? $data->title : '';
 
         if (!$result) {
-            Log::Warning('No title found in Title Extract');
-        }
-
-        if ($result) {
-            Log::Info('Title found: ' . $result);
+            Debug::current()->warning('No title found in Title Extract');
+            return '';
         }
 
         return $result;

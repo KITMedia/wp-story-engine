@@ -2,6 +2,7 @@
 
 namespace StoryEngine\WebHook\Post\Extract;
 
+use StoryEngine\WebHook\Helper\Debug;
 use StoryEngine\WebHook\Helper\Log;
 
 class Body implements ExtractInterface
@@ -16,7 +17,7 @@ class Body implements ExtractInterface
         $body = property_exists($data, 'body') ? $data->body : '';
 
         if (!$body) {
-            Log::Warning('No body found in Body Extract');
+            Debug::current()->warning('No body found in Body Extract');
         }
 
         $result = '';
@@ -37,6 +38,9 @@ class Body implements ExtractInterface
 
                         $callable = "{$base}{$class}::get";
                         $result .= call_user_func($callable, $item);
+                    }
+                    else {
+                        Debug::current()->warning("Type '{$item->type}' is missing for extraction in this plugin");
                     }
                 }
             }

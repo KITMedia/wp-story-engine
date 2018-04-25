@@ -12,7 +12,7 @@ class PublishedDate implements ExtractInterface
     public static function get($data)
     {
         return property_exists($data, 'publishedDate') ?
-            date_i18n('Y-m-d H:i:s', strtotime($data->publishedDate)) :
+            date('Y-m-d H:i:s', strtotime($data->publishedDate)) :
             null;
     }
 
@@ -20,7 +20,7 @@ class PublishedDate implements ExtractInterface
     {
         return [
             'post' => [
-                'post_date' => $value,
+                //'post_date' => $value,
                 'post_date_gmt' => $value,
             ],
         ];
