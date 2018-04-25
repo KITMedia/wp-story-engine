@@ -2,11 +2,16 @@
 
 namespace StoryEngine\WebHook\Post\Extract\Body;
 
+use StoryEngine\WebHook\Helper\Template;
+
 class Number implements ExtractBodyInterface
 {
     public static function get($data)
     {
         $number = property_exists($data, 'number') ? $data->number : '';
-        return "<h2>{$number}</h2>";
+
+        return Template::render('extractions/number', [
+            'number' => $number,
+        ]);
     }
 }

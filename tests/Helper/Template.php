@@ -10,6 +10,7 @@ class Template extends \WP_UnitTestCase
             'headline' => 'This is the Headline',
             'body' => 'This is the body',
             'apiUrl' => '',
+            'regenerateUrl' => '#',
         ]);
 
         $valid = strpos($output, 'This is the Headline');

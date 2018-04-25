@@ -2,6 +2,8 @@
 
 namespace StoryEngine\WebHook\Post\Extract\Body;
 
+use StoryEngine\WebHook\Helper\Template;
+
 class Heading implements ExtractBodyInterface
 {
     public static function get($data)
@@ -22,9 +24,12 @@ class Heading implements ExtractBodyInterface
                 $size = '3';
                 break;
             default:
-                $size = '4';
+                $size = '2';
         }
 
-        return "<h{$size}>{$content}</h{$size}>";
+        return Template::render('extractions/heading', [
+            'size' => $size,
+            'content' => $content,
+        ]);
     }
 }
