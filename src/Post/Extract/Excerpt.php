@@ -4,7 +4,8 @@ namespace StoryEngine\WebHook\Post\Extract;
 
 class Excerpt implements ExtractInterface
 {
-    public static function sortOrder() {
+    public static function sortOrder()
+    {
         return 20;
     }
 
@@ -14,7 +15,8 @@ class Excerpt implements ExtractInterface
         return $result;
     }
 
-    public static function mount($postData, $value) {
+    public static function mount($postData, $value)
+    {
         return [
             'post' => [
                 'post_excerpt' => $value,

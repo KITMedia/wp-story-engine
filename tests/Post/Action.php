@@ -21,12 +21,12 @@ class Action extends \WP_UnitTestCase
 
         $request->set_body($payload);
         $response = \StoryEngine\WebHook\Post\Action::receive($request);
-        $this->assertTrue(isset($response['result']) && $response['result']=="success");
+        $this->assertTrue(isset($response['result']) && $response['result'] == "success");
 
         $postId = (int)$response['id'];
-        $this->assertTrue($postId>0);
+        $this->assertTrue($postId > 0);
 
-        if($postId) {
+        if ($postId) {
             $post = get_post($postId);
             $this->assertTrue($post->post_title == "test");
             $this->assertTrue($post->post_excerpt == "testing excerpt");
@@ -34,7 +34,7 @@ class Action extends \WP_UnitTestCase
 
         $request->set_body('');
         $response = \StoryEngine\WebHook\Post\Action::receive($request);
-        $this->assertTrue(isset($response['result']) && $response['result']=="error");
+        $this->assertTrue(isset($response['result']) && $response['result'] == "error");
 
     }
 
