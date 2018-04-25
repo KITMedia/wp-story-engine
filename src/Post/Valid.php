@@ -21,7 +21,11 @@ class Valid
         ];
 
         if (!$bodyData) {
-            return "Payload body data as json missing";
+            return "Payload body data object missing";
+        }
+
+        if(!is_object($bodyData)) {
+            return "Payload body data has to be an object";
         }
 
         foreach ($properties as $property) {
