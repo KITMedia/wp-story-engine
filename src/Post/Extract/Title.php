@@ -12,6 +12,11 @@ class Title implements ExtractInterface
 
     public static function get($data)
     {
+        if(!is_object($data)) {
+            Log::Error('Data not an object for title extraction');
+            return '';
+        }
+
         $result = property_exists($data, 'title') ? $data->title : '';
 
         if (!$result) {
