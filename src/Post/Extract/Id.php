@@ -4,6 +4,7 @@ namespace StoryEngine\WebHook\Post\Extract;
 
 use StoryEngine\WebHook\Helper\Debug;
 use StoryEngine\WebHook\Helper\Log;
+use StoryEngine\WebHook\Post\Post;
 
 class Id implements ExtractInterface
 {
@@ -25,7 +26,7 @@ class Id implements ExtractInterface
     public static function mount($postData, $value) {
         return [
             'meta' => [
-                '_storyengine_id' => $value,
+                Post::KEY_POST => $value,
             ],
         ];
     }

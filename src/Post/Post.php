@@ -4,6 +4,8 @@ namespace StoryEngine\WebHook\Post;
 
 class Post
 {
+    const KEY_POST = '_storyengine_id';
+
     /**
      * @var int
      */
@@ -31,7 +33,19 @@ class Post
         $actions = $this->sortActions($actions);
         $this->data = $this->mountActions($this->data, $actions);
 
-        $this->id = wp_insert_post($this->data['post'], true);
+        if ($post = $this->findPost($this->data['meta'][Post::KEY_POST])) {
+            if ($post && $post->ID) {
+                $this->data['post']['ID'] = $post->ID;
+            }
+        }
+
+        if($post) {
+            wp_update_post($this->data['post'], true);
+            $this->id = $post->ID;
+        }
+        else {
+            $this->id = wp_insert_post($this->data['post'], true);
+        }
 
         if (!is_int($this->id)) {
             $this->error = $this->id;
@@ -40,6 +54,40 @@ class Post
         }
 
         $this->updatePostMeta($this->id, $this->data['meta']);
+
+        if (isset($this->data['attachments']['featured'])) {
+            set_post_thumbnail($this->id, $this->data['attachments']['featured']);
+        }
+
+        if (isset($this->data['attachments']['sideloaded'])) {
+            //$this->bindAttachments($this->id, $this->data['attachments']['sideloaded']);
+        }
+    }
+
+    private function updateFeaturedImage($postId, $featured)
+    {
+
+    }
+
+    private function bindAttachments($postId, $attachments)
+    {
+
+    }
+
+    private function findPost($id)
+    {
+        $posts = get_posts([
+            'posts_per_page' => -1,
+            'post_type' => 'post',
+            'meta_key' => Post::KEY_POST,
+            'meta_value' => $id,
+        ]);
+
+        if ($posts) {
+            return $posts[0];
+        }
+
+        return null;
     }
 
     private function fillActions($postBuilder)

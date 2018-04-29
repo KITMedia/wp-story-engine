@@ -8,13 +8,13 @@ class TheList implements ExtractBodyInterface
     {
         $items = property_exists($data, 'items') ? $data->items : [];
 
-        $result = "<ul>";
+        $result = "<{$data->listType}>";
 
         foreach ($items as $item) {
-            $result .= "<li>{$item->content}</li>";
+            $result .= "<li>{$item}</li>";
         }
 
-        $result .= "</ul>";
+        $result .= "</{$data->listType}>";
 
         return $result;
     }

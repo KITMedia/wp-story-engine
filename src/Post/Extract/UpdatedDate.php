@@ -13,15 +13,15 @@ class UpdatedDate implements ExtractInterface
     {
         return property_exists($data, 'updatedDate') ?
             date('Y-m-d H:i:s', strtotime($data->updatedDate)) :
-            null;
+            date('Y-m-d H:i:s');
     }
 
     public static function mount($postData, $value)
     {
         return [
             'post' => [
-                //'post_modified' => $value,
-                'post_modified_gmt' => $value,
+                'post_modified' => $value,
+                //'post_modified_gmt' => $value,
             ],
         ];
     }

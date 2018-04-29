@@ -13,15 +13,15 @@ class PublishedDate implements ExtractInterface
     {
         return property_exists($data, 'publishedDate') ?
             date('Y-m-d H:i:s', strtotime($data->publishedDate)) :
-            null;
+            date('Y-m-d H:i:s');
     }
 
     public static function mount($postData, $value)
     {
         return [
             'post' => [
-                //'post_date' => $value,
-                'post_date_gmt' => $value,
+                'post_date' => $value,
+                //'post_date_gmt' => $value,
             ],
         ];
     }
