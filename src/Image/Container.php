@@ -9,6 +9,8 @@ class Container
     public $attachmentId;
     public $path;
     public $url;
+    public $title;
+    public $link;
 
     private function __construct()
     {
@@ -23,6 +25,7 @@ class Container
         $image->attachmentId = $post->ID;
         $image->url = wp_get_attachment_url($post->ID);
         // $image->path =
+        $image->title = basename($image->url);
 
         return $image;
     }

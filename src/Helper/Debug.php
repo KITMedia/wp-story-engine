@@ -22,7 +22,7 @@ class Debug
     }
 
     /**
-     * @return StoryEngine\WebHook\Helper\Debug
+     * @return \StoryEngine\WebHook\Helper\Debug
      */
     public static function current()
     {
