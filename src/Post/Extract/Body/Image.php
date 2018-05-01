@@ -17,7 +17,13 @@ class Image implements ExtractBodyInterface
             return null;
         }
 
-        $image = Handle::get($asset->url);
+        $text = $asset->credit->text ?: null;
+        $role = $asset->credit->role ?: '';
+        $link = $asset->credit->link ?: null;
+
+        $title = $text . ($role ? ' ' . $role : '');
+
+        $image = Handle::get($asset->url, $title);
 
         if (!$image) {
             Debug::current()->error("Error create image for url {$asset->url}");
@@ -33,6 +39,7 @@ class Image implements ExtractBodyInterface
                 'class' => $align,
                 'alt' => $image->title,
             ]),
+            'link' => $link,
         ]);
     }
 

@@ -14,7 +14,7 @@ class FeaturedImage implements ExtractInterface
     public static function get($data)
     {
         $image = property_exists($data, 'featuredImage') ? $data->featuredImage : null;
-        return $image ? Handle::get($image->url) : null;
+        return $image ? Handle::get($image->url, $image->credit->text) : null;
     }
 
     public static function mount($postData, $value)

@@ -16,7 +16,7 @@ class Divider implements ExtractBodyInterface
             return null;
         }
 
-        $image = Handle::get($asset);
+        $image = Handle::get($asset, null);
 
         if (!$image) {
             Debug::current()->error("Error create image for divider from image url {$asset}");

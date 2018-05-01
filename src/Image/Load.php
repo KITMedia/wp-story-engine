@@ -4,7 +4,7 @@ namespace StoryEngine\WebHook\Image;
 
 class Load
 {
-    public static function get($url)
+    public static function get($url, $title)
     {
         $args = [
             'post_type' => 'attachment',
@@ -23,7 +23,7 @@ class Load
             return Container::loadFromPost($posts[0]);
         }
 
-        return Persist::store($url);
+        return Persist::store($url, $title);
     }
 
 }

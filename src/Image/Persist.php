@@ -8,7 +8,7 @@ class Persist
      * @param $url
      * @return null|Container
      */
-    public static function store($url)
+    public static function store($url, $title)
     {
         require_once(ABSPATH . 'wp-admin/includes/file.php');
         require_once(ABSPATH . 'wp-admin/includes/image.php');
@@ -41,11 +41,26 @@ class Persist
                 $local_url = $result['url'];  // URL to the file in the uploads dir
                 $type = $result['type']; // MIME type of the file
 
+                if(!$title) {
+                    $meta = wp_read_image_metadata($filename);
+                    if(isset($meta['title'])) $title = $meta['title'];
+                }
+
+                if(!$title) {
+                    $title = uniqid();
+                }
+
+                $content = '';
+                $meta = wp_read_image_metadata($filename);
+                if(isset($meta['caption'])) {
+                    $content = $meta['caption'];
+                }
+
                 $attachment = [
                     'guid' => $wp_upload_dir['url'] . '/' . basename($filename),
                     'post_mime_type' => $type,
-                    'post_title' => preg_replace('/\.[^.]+$/', '', basename($filename)),
-                    'post_content' => '',
+                    'post_title' => $title, //preg_replace('/\.[^.]+$/', '', basename($filename)),
+                    'post_content' => $content,
                     'post_status' => 'inherit'
                 ];
 
