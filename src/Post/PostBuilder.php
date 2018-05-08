@@ -6,6 +6,7 @@ class PostBuilder
 {
     public $inData;
     public $extractions;
+    public $author;
 
     public function __construct($jsonData)
     {
