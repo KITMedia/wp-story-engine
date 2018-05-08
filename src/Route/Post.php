@@ -14,5 +14,10 @@ class Post implements RouteInterface
             },
         ]);
 
+        \register_rest_route(RouteHelper::BASE, 'post/(?P<token>[a-zA-Z0-9-]+)/(?P<story_engine_id>[a-zA-Z0-9-]+)', [
+            'methods' => 'DELETE',
+            'callback' => "StoryEngine\\WebHook\\Post\\Action::delete",
+        ]);
+
     }
 }

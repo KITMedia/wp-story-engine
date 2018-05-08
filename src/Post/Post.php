@@ -39,11 +39,10 @@ class Post
             }
         }
 
-        if($post) {
+        if ($post) {
             wp_update_post($this->data['post'], true);
             $this->id = $post->ID;
-        }
-        else {
+        } else {
             $this->id = wp_insert_post($this->data['post'], true);
         }
 
@@ -75,6 +74,22 @@ class Post
     }
 
     private function findPost($id)
+    {
+        $posts = get_posts([
+            'posts_per_page' => -1,
+            'post_type' => 'post',
+            'meta_key' => Post::KEY_POST,
+            'meta_value' => $id,
+        ]);
+
+        if ($posts) {
+            return $posts[0];
+        }
+
+        return null;
+    }
+
+    public static function getPost($id)
     {
         $posts = get_posts([
             'posts_per_page' => -1,
@@ -146,4 +161,19 @@ class Post
         }
     }
 
+    /**
+     * @param $id
+     * @return bool
+     */
+    public static function delete($id)
+    {
+        $result = false;
+        $post = self::getPost($id);
+        if ($post) {
+            if (wp_delete_post($post->ID)) {
+                $result = true;
+            }
+        }
+        return $result;
+    }
 }

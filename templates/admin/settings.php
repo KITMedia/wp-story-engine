@@ -8,11 +8,15 @@
 
     <hr/>
 
-    <h3>Endpoint</h3>
+    <h3>Endpoints</h3>
 
     <p>
         Post Endpoint: <code><?php echo $apiUrl; ?></code>
     </p>
+    <p>
+        Delete Endpoint: <code><?php echo $apiUrl; ?>/{Story-Engine-ID}</code>
+    </p>
+
     <p>
         <a href="<?php echo $regenerateTokenUrl; ?>"
            class="button-primary"
