@@ -10,16 +10,15 @@ This plugin creates an endpoint for Story Engine to publish it's content.
 1. Test endpoints (malfunctional tests commented)
 1. Body type "number" => h3 with class="number"
 1. Paragraph with class="size"
-1. Image sideloaded
-1. Image role data concatinate with text
-1. Divider => center large full image sideloaded
 1. List with ul and ol
 1. Blockquote with class="align"
 1. Remove debug data via param in settings
-1. Delete endpoint
 1. Categories
+1. Authors as real authors with create in WP
+1. Test continued overall
 
 ### Done w17-2018
+1. Delete endpoint
 1. Remove monolog logging.
 1. Convert Log to debug and add it to post data
 1. Token added to post url as param
@@ -28,6 +27,9 @@ This plugin creates an endpoint for Story Engine to publish it's content.
 1. Date only to gmt
 1. Response code 400 for invalid data
 1. Response code 500 at errors
+1. Image sideloaded
+1. Image role data concatinate with text
+1. Divider => center large full image sideloaded
 
 ## Requirements
 * WordPress version 4.9 and up
