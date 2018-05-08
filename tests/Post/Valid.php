@@ -7,7 +7,12 @@ class Valid extends \WP_UnitTestCase
 
     public function testValid()
     {
-        $data = json_decode(file_get_contents(__DIR__ .'/../testdata.json'));
+        $data = json_decode(file_get_contents(__DIR__ .'/../testdata1.json'));
+
+        $valid = \StoryEngine\WebHook\Post\Valid::data($data);
+        $this->assertTrue($valid);
+
+        $data = json_decode(file_get_contents(__DIR__ .'/../testdata2.json'));
 
         $valid = \StoryEngine\WebHook\Post\Valid::data($data);
         $this->assertTrue($valid);

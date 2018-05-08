@@ -8,10 +8,10 @@ This plugin creates an endpoint for Story Engine to publish it's content.
 
 ## WORK IN PROGRESS - TODO
 1. Test endpoints (malfunctional tests commented) / migration tests
-1. Categories
 1. Test continued overall
 
 ### Done w19-2018
+1. Categories
 1. List with ul and ol
 1. Blockquote with class="align"
 1. Remove debug data via param in settings
