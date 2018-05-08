@@ -7,14 +7,7 @@ class Valid extends \WP_UnitTestCase
 
     public function testValid()
     {
-        $data = new \stdClass();
-        $data->body = "test";
-        $data->title = "test";
-        $data->authors = "eken";
-        $data->id= 123;
-        $data->excerpt = "testing excerpt";
-        $data->publishedDate="2018-12-12";
-        $data->updatedDate = "2018-12-12";
+        $data = json_decode(file_get_contents(__DIR__ .'/../testdata.json'));
 
         $valid = \StoryEngine\WebHook\Post\Valid::data($data);
         $this->assertTrue($valid);

@@ -16,8 +16,24 @@ class Paragraph implements ExtractBodyInterface
 
         $result = Template::render('extractions/paragraph', [
             'content' => $content,
+            'size' => self::translateSize($data),
         ]);
 
         return $result;
+    }
+
+    public static function translateSize($data)
+    {
+        $result = "medium";
+
+        if (!property_exists($data, 'settings')) {
+            return $result;
+        }
+
+        if (!property_exists($data->settings, 'size')) {
+            return $result;
+        }
+
+        return $data->settings->size;
     }
 }

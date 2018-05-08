@@ -12,17 +12,7 @@ class Action extends \WP_UnitTestCase
         $token = TokenManager::get();
         $request = new \WP_REST_Request("POST", "/wp-json/storyengine/webhook/v1/post/{$token}");
 
-        $payload = json_encode([
-            "body" => "test",
-            "title" => "test",
-            "authors" => "eken",
-            "id" => "123",
-            "excerpt" => "testing excerpt",
-            "publishedDate" => "2018-12-12",
-            "updatedDate" => "2018-12-12",
-        ]);
-
-        $request->set_body($payload);
+        $request->set_body(file_get_contents(__DIR__.'/../testdata.json'));
         $request->set_param('token', $token);
         $response = \StoryEngine\WebHook\Post\Action::receive($request);
         $data = $response->get_data();
@@ -33,8 +23,8 @@ class Action extends \WP_UnitTestCase
 
         if ($postId) {
             $post = get_post($postId);
-            $this->assertTrue($post->post_title == "test");
-            $this->assertTrue($post->post_excerpt == "testing excerpt");
+            $this->assertTrue($post->post_title == "Ketamin mot depression? Svenska läkare testar det");
+            $this->assertTrue($post->post_excerpt == "Becka har haft ett mörker över sig sen hon var barn. Kan ett bedövningsmedel med psykedeliska effekter hjälpa henne? Svenska forskare ska ta reda på hur ketamin snabbt kan lyfta folk ur mörkret.");
         }
 
         $request->set_body('');

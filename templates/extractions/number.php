@@ -1,3 +1,3 @@
-<h2 class="number">
+<h3 class="number">
     <?php echo $number; ?>
-</h2>
+</h3>

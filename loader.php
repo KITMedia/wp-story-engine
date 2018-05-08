@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Story Engine WebHook
  * Description: Provide WordPress with an endpoint to receive content from Story Engine.
- * Version: 0.7.1
+ * Version: 0.7.2
  * Author: KITMedia
  */
 
