@@ -7,15 +7,15 @@
 This plugin creates an endpoint for Story Engine to publish it's content.
 
 ## WORK IN PROGRESS - TODO
-1. Test endpoints (malfunctional tests commented)
-1. Paragraph with class="size"
-1. List with ul and ol
-1. Blockquote with class="align"
-1. Remove debug data via param in settings
+1. Test endpoints (malfunctional tests commented) / migration tests
 1. Categories
 1. Test continued overall
 
 ### Done w19-2018
+1. List with ul and ol
+1. Blockquote with class="align"
+1. Remove debug data via param in settings
+1. Paragraph with class="size"
 1. Body type "number" => h3 with class="number"
 1. Authors as real authors with create in WP
 1. Delete endpoint

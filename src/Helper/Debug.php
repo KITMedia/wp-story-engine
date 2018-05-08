@@ -13,12 +13,16 @@ use Monolog\Logger;
  */
 class Debug
 {
+    const OPTION_KEY = 'storyengine_debug';
+
     protected static $instance;
     protected $log;
+    protected $enabled;
 
     protected function __construct()
     {
         //feel free to do stuff that should only happen once here.
+        $this->enabled = true;
     }
 
     /**
@@ -62,6 +66,21 @@ class Debug
     public function critical($message)
     {
         $this->log[] = "(critical) {$message}";
+    }
+
+    public function enabled()
+    {
+        return get_option(self::OPTION_KEY, false);
+    }
+
+    public function disable()
+    {
+        delete_option(self::OPTION_KEY);
+    }
+
+    public function enable()
+    {
+        update_option(self::OPTION_KEY, 1);
     }
 
     /**

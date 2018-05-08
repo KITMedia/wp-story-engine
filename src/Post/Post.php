@@ -52,6 +52,9 @@ class Post
             return;
         }
 
+        $categories = $this->ensureCategories($this->data['categories']);
+        $this->bindCategories($this->id, $categories);
+
         $this->updatePostMeta($this->id, $this->data['meta']);
 
         if (isset($this->data['attachments']['featured'])) {
@@ -63,14 +66,28 @@ class Post
         }
     }
 
-    private function updateFeaturedImage($postId, $featured)
+    private function ensureCategories($categories)
     {
-
+        $result = [];
+        foreach ($categories as $category) {
+            $term = \get_term_by('slug', $category->name, 'category');
+            if(!$term) {
+                $title = property_exists($category, 'displayName') ? $category->displayName : $category->name;
+                $newTerm = wp_insert_term($title, 'category', [
+                    'slug' => $category->name,
+                ]);
+                $result[] = $newTerm['term_id'];
+            }
+            else {
+                $result[] = $term->term_id;
+            }
+        }
+        return $result;
     }
 
-    private function bindAttachments($postId, $attachments)
+    private function bindCategories($postId, $categories)
     {
-
+        \wp_set_object_terms($postId, $categories, 'category');
     }
 
     private function findPost($id)

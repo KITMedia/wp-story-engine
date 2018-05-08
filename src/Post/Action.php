@@ -49,21 +49,30 @@ class Action
             ->addExtractions()
             ->build();
 
-        $response = new \WP_REST_Response([
+        $args = [
             'result' => $post->id ? 'success' : 'error',
             'id' => $post->id,
             'url' => get_permalink($post->id),
-            'error' => $post->error,
-            'debug' => [
+        ];
+
+        if ($post->error) {
+            $args['error'] = $post->error;
+        }
+
+        if (Debug::current()->enabled()) {
+            $args['debug'] = [
                 'log' => Debug::current()->toArray(),
                 'wpPostData' => $post->data,
-            ]
-        ], 200);
+            ];
+        }
+
+        $response = new \WP_REST_Response($args, 200);
 
         return $response;
     }
 
-    public static function delete(\WP_REST_Request $request) {
+    public static function delete(\WP_REST_Request $request)
+    {
 
         $token = $request->get_param('token');
         if (TokenManager::get() !== $token) {
@@ -82,7 +91,7 @@ class Action
 
         $result = Post::delete($request->get_param('story_engine_id'));
 
-        if($result) {
+        if ($result) {
             $response = new \WP_REST_Response([
                 "result" => "success",
                 "error" => null,

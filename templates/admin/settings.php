@@ -29,16 +29,16 @@
 
     <h3>Settings</h3>
 
-    <form>
+    <form action="?page=wp-story-engine-settings" method="post">
 
         <p>
             <label for="debugMode">
-                <input type="checkbox" value="1" name="debug"/>
+                <input type="checkbox" value="1" name="debug" <?php echo $debug ? 'checked="checked"' : ''; ?> />
                 Debug Mode (adds post and result data to response and post)
             </label>
         </p>
 
-        <input type="submit" class="button-primary" value="Save"/>
+        <input name="save" type="submit" class="button-primary" value="Save"/>
 
     </form>
 
