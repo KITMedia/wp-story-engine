@@ -26,7 +26,9 @@ class TheList implements ExtractBodyInterface
     {
         $result = "ul";
         if (property_exists($data, 'listType')) {
-            $result = $data->listType;
+            if ($data->listType == 'ol') {
+                $result = 'ol';
+            }
         }
         return $result;
     }
