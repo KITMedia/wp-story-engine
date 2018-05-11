@@ -14,7 +14,7 @@ class Blockquote implements ExtractBodyInterface
 
         $content = property_exists($data, 'content') ? $data->content : '';
         $settings = property_exists($data, 'settings') ? $data->settings : null;
-        $align = property_exists($settings, 'alignment') ? $settings->align : 'left';
+        $align = property_exists($settings, 'alignment') ? $settings->alignment : 'left';
 
         return Template::render('extractions/blockquote', [
             'content' => $content,
