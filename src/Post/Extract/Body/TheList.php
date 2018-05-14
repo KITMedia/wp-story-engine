@@ -10,9 +10,11 @@ class TheList implements ExtractBodyInterface
     {
         $items = property_exists($data, 'items') ? $data->items : [];
 
+        /*
         foreach ($items as $key => $item) {
             $items[$key] = $item->content;
         }
+        */
 
         $result = Template::render('extractions/thelist', [
             'items' => $items,
