@@ -1,0 +1,287 @@
+{
+    "id": "5ae32af2ab8080ffe69ce5bb",
+    "publishedDate": null,
+    "updatedDate": "2018-04-27T14:45:15.647Z",
+    "title": "Alla content blocks TEST",
+    "excerpt": "EXCEPRTETER",
+    "featuredImage": {},
+    "body": [
+        {
+            "type": "image",
+            "asset": {
+                "url": "https://dev-static.kitcdn.se/cws/2018/04/3a28e9c0666ac97af261fca561fa462b_1524838468789.jpg",
+                "credit": {
+                    "link": null,
+                    "text": null,
+                    "role": null
+                },
+                "dimensions": {
+                    "height": 1049,
+                    "width": 1999
+                }
+            },
+            "settings": {
+                "size": "small",
+                "alignment": "left"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.",
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "image",
+            "asset": {
+                "url": "https://dev-static.kitcdn.se/cws/2018/04/3a28e9c0666ac97af261fca561fa462b_1524838468789.jpg",
+                "credit": {
+                    "link": null,
+                    "text": null,
+                    "role": null
+                },
+                "dimensions": {
+                    "height": 1049,
+                    "width": 1999
+                }
+            },
+            "settings": {
+                "size": "small",
+                "alignment": "center"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "image",
+            "asset": {
+                "url": "https://dev-static.kitcdn.se/cws/2018/04/3a28e9c0666ac97af261fca561fa462b_1524838468789.jpg",
+                "credit": {
+                    "link": null,
+                    "text": null,
+                    "role": null
+                },
+                "dimensions": {
+                    "height": 1049,
+                    "width": 1999
+                }
+            },
+            "settings": {
+                "size": "small",
+                "alignment": "right"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.",
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "image",
+            "asset": {
+                "url": "https://dev-static.kitcdn.se/cws/2018/04/3a28e9c0666ac97af261fca561fa462b_1524838468789.jpg",
+                "credit": {
+                    "link": null,
+                    "text": null,
+                    "role": null
+                },
+                "dimensions": {
+                    "height": 1049,
+                    "width": 1999
+                }
+            },
+            "settings": {
+                "size": "large",
+                "alignment": "center"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "image",
+            "asset": {
+                "url": "https://dev-static.kitcdn.se/cws/2018/04/3a28e9c0666ac97af261fca561fa462b_1524838468789.jpg",
+                "credit": {
+                    "link": null,
+                    "text": null,
+                    "role": null
+                },
+                "dimensions": {
+                    "height": 1049,
+                    "width": 1999
+                }
+            },
+            "settings": {
+                "size": "medium",
+                "alignment": "center"
+            }
+        },
+        {
+            "type": "number",
+            "number": 1,
+            "settings": {
+                "order": "asc"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.",
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "divider",
+            "asset": "https://dev-static.kitcdn.se/cws/2018/04/ece3cecd28bee69e9bebbb56e2e88d2c_1524839184736.png"
+        },
+        {
+            "type": "number",
+            "number": 2,
+            "settings": {
+                "order": "asc"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.",
+            "settings": {
+                "size": "small"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "embed",
+            "url": "https://www.youtube.com/watch?v=kbtDM2LPQ0o",
+            "provider": "youtube"
+        },
+        {
+            "type": "heading",
+            "content": "asd",
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "gif",
+            "asset": {
+                "url": "https://dev-static.kitcdn.se/cws/2018/04/f78492f0513c659e69dab2e47f567202_1524838468782.gif",
+                "credit": {
+                    "link": null,
+                    "text": null,
+                    "role": null
+                },
+                "dimensions": {
+                    "height": 320,
+                    "width": 480
+                }
+            },
+            "settings": {
+                "size": "large",
+                "alignment": "center",
+                "autoplay": false
+            },
+            "caption": "Hehe"
+        },
+        {
+            "type": "list",
+            "listType": "ul",
+            "items": [
+                "asd",
+                "asd",
+                "aasd"
+            ],
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "list",
+            "listType": "ol",
+            "items": [
+                "a<a href=\"https://google.se\" target=\"\">sd</a>",
+                "as<i>d</i>",
+                "a<b>sdasd</b>"
+            ],
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "blockquote",
+            "content": "asd",
+            "settings": {
+                "alignment": "center"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "a<a href=\"http://www.sivervik.com\" target=\"_blank\">sdasd</a>",
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "<a href=\"http://www.sivervik.com\" target=\"\">asd</a>",
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "a<b>sdasd</b>",
+            "settings": {
+                "size": "medium"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": "<i>asasd</i>",
+            "settings": {
+                "size": "medium"
+            }
+        }
+    ],
+    "authors": [
+        {
+            "id": "1",
+            "login": "kitadmin",
+            "name": "KIT Admin",
+            "email": "christoffer.larsson@kit.se",
+            "avatar": "http://dev-static.kitcdn.se/app/uploads/2015/03/kit-logo-10241-150x150.png",
+            "twitter": "KIT_Sverige",
+            "instagram": "kit.se",
+            "role": "Skribent"
+        }
+    ],
+    "metadata": {
+        "category": [],
+        "story": null
+    }
+}
