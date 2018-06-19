@@ -20,6 +20,7 @@ class Image implements ExtractBodyInterface
         $text = $asset->credit->text ?: null;
         $role = $asset->credit->role ?: '';
         $link = $asset->credit->link ?: null;
+        $caption = $data->caption ?: null;
 
         $title = $text . ($role ? ' ' . $role : '');
 
@@ -32,6 +33,13 @@ class Image implements ExtractBodyInterface
 
         $align = self::translateAlignment($data);
         $size = self::translateSize($data);
+
+        $image->caption = self::getCaption($data);
+        $imageSrc = wp_get_attachment_image_src($image->attachmentId, $size);
+        $image->width = $imageSrc[1];
+        $image->height = $imageSrc[2];
+        $image->align = $align;
+        $image->size = $size;
 
         return Template::render('extractions/image', [
             'image' => $image,
@@ -93,6 +101,33 @@ class Image implements ExtractBodyInterface
         }
 
         return $result;
+    }
+
+    public static function getCaption($data)
+    {
+        $result = '';
+
+        if (property_exists($data, 'caption')) {
+            $result .= '<span class="image-caption">' . $data->caption . '</span>';
+        }
+
+        if (property_exists($data->asset, 'credit')) {
+            $credit = '';
+            if (property_exists($data->asset->credit, 'text')) { 
+                $credit .= $data->asset->credit->text;
+            }
+            if (property_exists($data->asset->credit, 'link')) { 
+                $credit = '<a href="' . $data->asset->credit->link  . '">' . $credit . '</a>';
+            }
+            if (property_exists($data->asset->credit, 'role') && !empty($data->asset->credit->role)) { 
+                $credit = $data->asset->credit->role . ': ' . $credit;
+            }
+            if ($credit !== ''){
+                $result .= ' <span class="image-credit">'. $credit .'</span>';
+            }
+        }
+
+        return $result !== '' ? $result : null;
     }
 
 }
