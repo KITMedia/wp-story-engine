@@ -36,7 +36,7 @@ class Image implements ExtractBodyInterface
         return Template::render('extractions/image', [
             'image' => $image,
             'imageHTML' => \wp_get_attachment_image($image->attachmentId, $size, false, [
-                'class' => $align,
+                'class' => $align . ' size-' . $size ,
                 'alt' => $image->title,
             ]),
             'link' => $link,
