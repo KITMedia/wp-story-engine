@@ -89,7 +89,7 @@ class Image implements ExtractBodyInterface
                 $result = 'medium';
                 break;
             default:
-                $result = 'full';
+                $result = 'large';
         }
 
         return $result;
