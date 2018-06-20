@@ -119,11 +119,12 @@ class Image implements ExtractBodyInterface
             if (property_exists($data->asset->credit, 'link')) { 
                 $credit = '<a href="' . $data->asset->credit->link  . '">' . $credit . '</a>';
             }
+            /*
             if (property_exists($data->asset->credit, 'role') && !empty($data->asset->credit->role)) { 
                 $credit = $data->asset->credit->role . ': ' . $credit;
-            }
+            }*/
             if ($credit !== ''){
-                $result .= ' <span class="image-credit">'. $credit .'</span>';
+                $result .= ' <span class="image-credit">Credit: '. $credit .'</span>';
             }
         }
 
