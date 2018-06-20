@@ -107,16 +107,16 @@ class Image implements ExtractBodyInterface
     {
         $result = '';
 
-        if (property_exists($data, 'caption')) {
+        if (property_exists($data, 'caption') && isset($data->caption)) {
             $result .= '<span class="image-caption">' . $data->caption . '</span>';
         }
 
         if (property_exists($data->asset, 'credit')) {
             $credit = '';
-            if (property_exists($data->asset->credit, 'text')) { 
+            if (property_exists($data->asset->credit, 'text') && isset($data->asset->credit->text)) { 
                 $credit .= $data->asset->credit->text;
             }
-            if (property_exists($data->asset->credit, 'link')) { 
+            if (property_exists($data->asset->credit, 'link') && isset($data->asset->credit->link)) { 
                 $credit = '<a href="' . $data->asset->credit->link  . '">' . $credit . '</a>';
             }
             /*
