@@ -15,7 +15,6 @@ class Valid
             "title",
             "authors",
             "id",
-            "excerpt",
             "publishedDate",
             "updatedDate",
         ];

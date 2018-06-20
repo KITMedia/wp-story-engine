@@ -15,6 +15,7 @@ class Body implements ExtractInterface
     public static function get($data)
     {
         $body = property_exists($data, 'body') ? $data->body : '';
+        $excerpt = property_exists($data, 'excerpt') ? $data->excerpt : null;
 
         if (!$body) {
             Debug::current()->warning('No body found in Body Extract');
@@ -44,6 +45,10 @@ class Body implements ExtractInterface
                     }
                 }
             }
+        }
+
+        if ($excerpt) {
+            $result = '<p class="excerpt">' . $excerpt . '</p>' . $result;
         }
 
         return wpautop($result);
