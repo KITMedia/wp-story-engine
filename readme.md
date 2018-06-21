@@ -22,7 +22,7 @@ Download latest tag/release as zip archive and upload via wp-admin. Please note 
 ### Automatic (preferred)
 This way of installing will ensure that the latest version of this plugin will be available in your WP installation. 
 1. Install WordPress GitHub Updater plugin from [https://github.com/afragen/github-updater](https://github.com/afragen/github-updater)
-2. Install this plugin via wp-admin / GitHub Updater page
+2. Install this plugin via wp-admin / GitHub Updater page. Use master branch for stable version.
 
 ## Packagist
 The plugin is pushed to Packagist for usage via composer if wanted.
