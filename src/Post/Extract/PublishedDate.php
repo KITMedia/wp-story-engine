@@ -20,7 +20,7 @@ class PublishedDate implements ExtractInterface
     {
         return [
             'post' => [
-                'post_date' => $value,
+                'post_date_gmt' => $value,
                 //'post_date_gmt' => $value,
             ],
         ];
