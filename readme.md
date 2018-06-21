@@ -58,3 +58,10 @@ Attention! `composer update` before any style check!
 
 ## Data
 Gist example data (incoming json to endpoint): [https://gist.github.com/chredd/05dcdde86a48c8558ba70c5fe95514c5](https://gist.github.com/chredd/05dcdde86a48c8558ba70c5fe95514c5)
+
+## Roadmap
+This is the preliminary roadmap of the plugin.
+
+* Support for Category mappings.
+* Support for mapping image sizes from Story Engine to WordPress image sizes.
+* (More to come)
