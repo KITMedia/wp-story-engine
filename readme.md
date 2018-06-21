@@ -4,45 +4,28 @@
 [![Build Status](https://travis-ci.org/KITMedia/wp-story-engine.svg?branch=develop)](https://travis-ci.org/KITMedia/wp-story-engine)
 [![GitHub release](https://img.shields.io/github/release/KITMedia/wp-story-engine.svg)](https://github.com/KITMedia/wp-story-engine/archive/develop.zip)
 
-This plugin creates an endpoint for Story Engine to publish it's content.
+This plugin creates an endpoint for Story Engine to publish content.
 
 ## WORK IN PROGRESS - TODO
 1. Test endpoints (malfunctional tests commented) / migration tests
-1. Test continued overall
-
-### Done w19-2018
-1. Categories
-1. List with ul and ol
-1. Blockquote with class="align"
-1. Remove debug data via param in settings
-1. Paragraph with class="size"
-1. Body type "number" => h3 with class="number"
-1. Authors as real authors with create in WP
-1. Delete endpoint
-1. Remove monolog logging.
-1. Convert Log to debug and add it to post data
-1. Token added to post url as param
-1. Admin refresh token in options
-1. Remove PHP Shorttags
-1. Date only to gmt
-1. Response code 400 for invalid data
-1. Response code 500 at errors
-1. Image sideloaded
-1. Image role data concatinate with text
-1. Divider => center large full image sideloaded
+2. Test continued overall
 
 ## Requirements
 * WordPress version 4.9 and up
 * PHP 5.6 and up
 
 ## Plugin install
-...
+
+### Manually
+Download latest tag/release as zip archive and upload via wp-admin. Please note that you will have to keep track of updates manually. 
+
+### Automatic (preferred)
+This way of installing will ensure that the latest version of this plugin will be available in your WP installation. 
+1. Install WordPress GitHub Updater plugin from [https://github.com/afragen/github-updater](https://github.com/afragen/github-updater)
+2. Install this plugin via wp-admin / GitHub Updater page
 
 ## Packagist
 The plugin is pushed to Packagist for usage via composer if wanted.
-
-## Official WordPress repository
-The plugin is published to the official WordPress repository at [https://wordpress.org/plugins/](https://wordpress.org/plugins/).
 
 ## Development
 
