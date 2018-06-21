@@ -4,9 +4,12 @@ namespace StoryEngine\WebHook\Post\Extract;
 
 use StoryEngine\WebHook\Helper\Debug;
 use StoryEngine\WebHook\Helper\Log;
+use StoryEngine\WebHook\Helper\Options;
 
 class Body implements ExtractInterface
 {
+    const OPTIONS_NO_EXCERPT = 'SEWP_NO_EXCERPT';
+    
     public static function sortOrder()
     {
         return 50;
@@ -15,7 +18,6 @@ class Body implements ExtractInterface
     public static function get($data)
     {
         $body = property_exists($data, 'body') ? $data->body : '';
-        $excerpt = property_exists($data, 'excerpt') ? $data->excerpt : null;
 
         if (!$body) {
             Debug::current()->warning('No body found in Body Extract');
@@ -47,8 +49,11 @@ class Body implements ExtractInterface
             }
         }
 
-        if ($excerpt) {
-            $result = '<p class="excerpt">' . $excerpt . '</p>' . $result;
+        if (false === Options::enabled(self::OPTIONS_NO_EXCERPT)) {
+            $excerpt = property_exists($data, 'excerpt') ? $data->excerpt : null;
+            if ($excerpt) {
+                $result = '<p class="excerpt">' . $excerpt . '</p>' . $result;
+            }
         }
 
         return wpautop($result);

@@ -38,6 +38,13 @@
             </label>
         </p>
 
+        <p>
+            <label for="noExcerpt">
+                <input type="checkbox" value="1" name="noExcerpt" <?php echo $excerpt ? 'checked="checked"' : ''; ?> />
+                Skip excerpt in post_body (excerpt will only be imported to post_excerpt)
+            </label>
+        </p>
+
         <input name="save" type="submit" class="button-primary" value="Save"/>
 
     </form>
