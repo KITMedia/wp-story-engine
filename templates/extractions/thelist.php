@@ -1,4 +1,4 @@
-<<?php echo $type; ?>>
+<<?php echo $type; ?> class="<?php echo $class; ?>">
 <?php foreach ($items as $item) { ?>
     <li><?php echo $item; ?></li>
 <?php } ?>

@@ -19,6 +19,7 @@ class TheList implements ExtractBodyInterface
         $result = Template::render('extractions/thelist', [
             'items' => $items,
             'type' => self::translateType($data),
+            'class' => self::translateClass($data),
         ]);
 
         return $result;
@@ -32,6 +33,23 @@ class TheList implements ExtractBodyInterface
                 $result = 'ol';
             }
         }
+        return $result;
+    }
+
+    public static function translateClass($data)
+    {
+        $result = "medium";
+
+        if (!property_exists($data, 'settings')) {
+            return $result;
+        }
+
+        if (!property_exists($data->settings, 'size')) {
+            return $result;
+        }
+
+        $result = $data->settings->size;
+
         return $result;
     }
 }
