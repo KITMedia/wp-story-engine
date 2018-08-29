@@ -68,17 +68,17 @@ class Post
 
     private function ensureCategories($categories)
     {
+
         $result = [];
         foreach ($categories as $category) {
             $term = \get_term_by('slug', $category->name, 'category');
-            if(!$term) {
+            if (!$term) {
                 $title = property_exists($category, 'displayName') ? $category->displayName : $category->name;
                 $newTerm = wp_insert_term($title, 'category', [
                     'slug' => $category->name,
                 ]);
                 $result[] = $newTerm['term_id'];
-            }
-            else {
+            } else {
                 $result[] = $term->term_id;
             }
         }
