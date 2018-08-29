@@ -2,9 +2,14 @@
 
 namespace StoryEngine\WebHook\Post;
 
+use StoryEngine\WebHook\Helper\Options;
+
 class Post
 {
     const KEY_POST = '_storyengine_id';
+
+    const OPTIONS_IMPORT_TO_CATEGORY = 'SEWP_IMPORT_TO_CATEGORY';
+    const OPTIONS_IMPORT_TO_CATEGORY_ID = 'SEWP_IMPORT_TO_CATEGORY_ID';
 
     /**
      * @var int
@@ -52,7 +57,12 @@ class Post
             return;
         }
 
-        $categories = $this->ensureCategories($this->data['categories']);
+        if (Options::enabled(self::OPTIONS_IMPORT_TO_CATEGORY)) {
+            $categories = array((int)Options::get(self::OPTIONS_IMPORT_TO_CATEGORY_ID));
+        } else {
+            $categories = $this->ensureCategories($this->data['categories']);
+        }
+
         $this->bindCategories($this->id, $categories);
 
         $this->updatePostMeta($this->id, $this->data['meta']);

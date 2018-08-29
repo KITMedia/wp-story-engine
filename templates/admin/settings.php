@@ -45,6 +45,26 @@
             </label>
         </p>
 
+        <p>
+            <label for="importToCategory">
+                <input type="checkbox" value="1"
+                       name="importToCategory" <?php echo $importToCategory ? 'checked="checked"' : ''; ?> />
+                Import posts to an already existing category:
+            </label>
+
+            <select name="importToCategoryId" id="importToCategoryId">
+                <option>Select category...</option>
+                <?php foreach (get_categories(array('hide_empty' => false)) as $category): ?>
+                    <option value="<?php echo $category->term_id ?>"
+                        <?php echo (int)$importToCategoryId == $category->term_id ? ' selected="selected"' : '' ?>>
+                        <?php echo $category->name ?>
+                    </option>
+                    <?php print_r($category) ?>
+                <?php endforeach; ?>
+            </select>
+
+        </p>
+
         <input name="save" type="submit" class="button-primary" value="Save"/>
 
     </form>
