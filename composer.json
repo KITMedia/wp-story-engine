@@ -12,11 +12,17 @@
         "squizlabs/php_codesniffer": "*",
         "frozzare/wp-test-suite": "*"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/KITMedia/wp-story-engine"
+        }
+    ],
     "license": "MIT",
     "authors": [
         {
-            "name": "KITMedia",
-            "email": "info@kit.se"
+            "name": "KIT Media",
+            "email": "services@kit.se"
         }
     ],
     "require": {

@@ -12,6 +12,10 @@ class Template extends \WP_UnitTestCase
             'apiUrl' => '',
             'regenerateTokenUrl' => '?page=wp-story-engine-settings&regenerateToken=true',
             'debug' => 1,
+            'excerpt' => false,
+            'importToCategory' => true,
+            'importToCategoryId' => 1,
+
         ]);
 
         $valid = strpos($output, 'This is the Headline');

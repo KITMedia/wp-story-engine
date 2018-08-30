@@ -14,7 +14,7 @@ class Options
     protected function __construct()
     {
         //feel free to do stuff that should only happen once here.
-        
+
     }
 
     public static function enabled($option_key)
@@ -30,5 +30,15 @@ class Options
     public static function enable($option_key)
     {
         update_option($option_key, 1);
+    }
+
+    public static function get($option_key)
+    {
+        return get_option($option_key);
+    }
+
+    public static function set($option_key, $value)
+    {
+        return update_option($option_key, $value);
     }
 }
